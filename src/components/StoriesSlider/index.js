@@ -1,0 +1,143 @@
+import Cookies from 'js-cookie'
+
+import Slider from 'react-slick'
+import Loader from 'react-loader-spinner'
+
+import {Component} from 'react'
+
+import StoryItem from '../StoryItem'
+
+import './index.css'
+
+const apiStatusConstants = {
+  initial: 'INITIAL',
+  success: 'SUCCESS',
+  failure: 'FAILURE',
+  inProgress: 'IN_PROGRESS',
+}
+
+class StoriesSlider extends Component {
+  state = {
+    usersStories: [],
+    apiStatus: apiStatusConstants.initial,
+  }
+
+  componentDidMount() {
+    this.getStoriesData()
+  }
+
+  getStoriesData = async () => {
+    this.setState({apiStatus: apiStatusConstants.inProgress})
+
+    const accessToken = Cookies.get('jwt_token')
+
+    const storiesUrl = 'https://apis.ccbp.in/insta-share/stories'
+    const options = {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+      method: 'GET',
+    }
+
+    const response = await fetch(storiesUrl, options)
+
+    if (response.ok === true) {
+      const fetchedData = await response.json()
+      const updatedData = fetchedData.users_stories.map(eachStory => ({
+        userId: eachStory.user_id,
+        userName: eachStory.user_name,
+        storyUrl: eachStory.story_url,
+      }))
+      this.setState({
+        usersStories: updatedData,
+        apiStatus: apiStatusConstants.success,
+      })
+    } else {
+      this.setState({
+        apiStatus: apiStatusConstants.failure,
+      })
+    }
+  }
+
+  renderStoriesLoadingView = () => (
+    <>
+      <div className="stories-loader-container" data-testid="loader">
+        <Loader
+          type="TailSpin"
+          color="#4094EF"
+          height={32}
+          width={32}
+          className="mobile-stories-loader"
+        />
+      </div>
+      <div className="stories-loader-container" data-testid="loader">
+        <Loader
+          type="TailSpin"
+          color="#4094EF"
+          height={48}
+          width={48}
+          className="desktop-stories-loader"
+        />
+      </div>
+    </>
+  )
+
+  renderStoriesSliderView = () => {
+    const {usersStories} = this.state
+
+    const mobileSettings = {
+      dots: false,
+      slidesToScroll: 1,
+      slidesToShow: 4,
+      centerPadding: '50px',
+    }
+    const desktopSettings = {
+      dots: false,
+      slidesToScroll: 1,
+      slidesToShow: 7,
+      centerPadding: '50px',
+    }
+
+    return (
+      <>
+        <ul className="mobile-stories-slider">
+          <Slider {...mobileSettings}>
+            {usersStories.map(eachStory => (
+              <StoryItem key={eachStory.userId} storyDetails={eachStory} />
+            ))}
+          </Slider>
+        </ul>
+        <ul className="desktop-stories-slider">
+          <Slider {...desktopSettings}>
+            {usersStories.map(eachStory => (
+              <StoryItem key={eachStory.userId} storyDetails={eachStory} />
+            ))}
+          </Slider>
+        </ul>
+      </>
+    )
+  }
+
+  renderAllSliderViews = () => {
+    const {apiStatus} = this.state
+
+    switch (apiStatus) {
+      case apiStatusConstants.success:
+        return this.renderStoriesSliderView()
+      case apiStatusConstants.inProgress:
+        return this.renderStoriesLoadingView()
+      default:
+        return null
+    }
+  }
+
+  render() {
+    return (
+      <div className="stories-slider-container">
+        {this.renderAllSliderViews()}
+      </div>
+    )
+  }
+}
+
+export default StoriesSlider

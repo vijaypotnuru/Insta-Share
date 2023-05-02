@@ -20,7 +20,7 @@
   height: 373px;
   max-width: 582px;
   flex-shrink: 1;
-  margin-right: 20px;
+  margin-right: 82px;
 }
 
 @media screen and (max-width: 991px) {
@@ -41,11 +41,10 @@
 @media screen and (min-width: 992px) {
   .form-container {
     max-width: 456px;
-    height: 458px;
     flex-shrink: 0;
     background-color: #fefeff;
     box-shadow: 0px 8px 40px rgba(7, 7, 7, 0.08);
-    padding: 60px 30px 30px 30px;
+    padding: 60px 48px 48px 48px;
   }
 }
 
@@ -129,6 +128,7 @@
   line-height: 16px;
   color: #ef4444;
   margin-top: 8px;
+  text-transform: capitalize;
 }
 
 .login-button {

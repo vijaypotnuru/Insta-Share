@@ -1,0 +1,93 @@
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #fafafa;
+  padding: 24px;
+}
+
+.not-found-img {
+  height: 173px;
+  width: 157px;
+}
+
+.not-found-main-heading {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 32px;
+  text-align: center;
+  color: #262626;
+  margin-top: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .not-found-main-heading {
+    font-size: 32px;
+    line-height: 48px;
+  }
+}
+
+.not-found-description {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #989898;
+  margin: 0;
+}
+
+.not-found-note {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #989898;
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .not-found-description {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .not-found-note {
+    font-size: 20px;
+    line-height: 32px;
+  }
+}
+
+.not-found-home-page-btn {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 8px 24px 8px 24px;
+  background: #4094ef;
+  border-radius: 8px;
+  border: none;
+  margin-top: 24px;
+  cursor: pointer;
+  outline: none;
+}
+
+@media screen and (min-width: 768px) {
+  .not-found-home-page-btn {
+    font-size: 14px;
+    line-height: 24px;
+    border-radius: 12px;
+    padding: 12px 32px 12px 32px;
+    border-radius: 12px;
+  }
+}
