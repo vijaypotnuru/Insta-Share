@@ -80,7 +80,7 @@ class PostFeed extends Component {
 
     const response = await fetch(likeUrl, options)
     const data = await response.json()
-    console.log(data)
+
     const updatedLikedIds = isLikedIds.filter(eachId => {
       if (eachId !== postId) {
         return true
@@ -92,8 +92,6 @@ class PostFeed extends Component {
   }
 
   selectUnlike = async postId => {
-    const {isLikedIds} = this.state
-
     const accessToken = Cookies.get('jwt_token')
 
     const likeUrl = `https://apis.ccbp.in/insta-share/posts/${postId}/like`

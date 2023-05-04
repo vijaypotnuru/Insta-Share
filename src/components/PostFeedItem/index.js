@@ -1,5 +1,7 @@
 import './index.css'
 
+import {Link} from 'react-router-dom'
+
 import {BsHeart} from 'react-icons/bs'
 import {FaRegComment} from 'react-icons/fa'
 import {BiShareAlt} from 'react-icons/bi'
@@ -36,7 +38,9 @@ const PostFeedItem = props => {
             className="post-feed-item-dp-profile-pic"
           />
         </div>
-        <h1 className="post-feed-item-dp-profile-name">{userName}</h1>
+        <Link to={`/users/${userId}`} className="link">
+          <h1 className="post-feed-item-dp-profile-name">{userName}</h1>
+        </Link>
       </div>
       <img
         className="post-feed-item-user-post-image"

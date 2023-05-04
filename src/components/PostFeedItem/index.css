@@ -51,6 +51,11 @@
   border-radius: 50px;
 }
 
+.link {
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
 .post-feed-item-dp-profile-name {
   font-family: 'Roboto';
   font-style: normal;
