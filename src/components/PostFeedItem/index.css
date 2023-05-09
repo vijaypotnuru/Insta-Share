@@ -33,22 +33,22 @@
   align-items: center;
   height: 32px;
   width: 32px;
-  padding: 2px;
   border-radius: 50%;
-  border: 1.03px solid;
-  border-image: linear-gradient(
-      314.35deg,
-      #e20337 6.03%,
-      #c60188 40.88%,
-      #7700c3 73.23%
-    )
-    10;
+  background: linear-gradient(
+    314.35deg,
+    #e20337 6.03%,
+    #c60188 40.88%,
+    #7700c3 73.23%
+  );
 }
+
+
 
 .post-feed-item-dp-profile-pic {
   width: 28px;
   height: 28px;
   border-radius: 50px;
+  border: 2px solid #ffffff;
 }
 
 .link {

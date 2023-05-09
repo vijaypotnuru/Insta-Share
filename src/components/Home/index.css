@@ -11,3 +11,12 @@
     padding-bottom: 48px;
   }
 }
+
+.search-results-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fafafa;
+  min-height: 100vh;
+  padding-bottom: 36px;
+}
