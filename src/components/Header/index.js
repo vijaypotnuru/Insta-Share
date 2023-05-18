@@ -26,7 +26,14 @@ class Header extends Component {
 
   render() {
     const {showMobileMenu} = this.state
-    const {onChangeSearchInput, searchInput} = this.props
+    const {
+      onChangeSearchInput,
+      searchInput,
+      getSearchResults,
+      onChangeSearchMode,
+      onChangeSearchModeDesktop,
+      onChangeSearchModeOff,
+    } = this.props
     return (
       <nav className="nav-header">
         <div className="nav-content">
@@ -57,7 +64,10 @@ class Header extends Component {
               <h1 className="nav-website-name">Insta Share</h1>
             </Link>
             <ul className="nav-menu">
-              <li className="nav-search-bar">
+              <li
+                className="nav-search-bar"
+                onClick={onChangeSearchModeDesktop}
+              >
                 <input
                   onChange={onChangeSearchInput}
                   type="search"
@@ -69,11 +79,12 @@ class Header extends Component {
                   type="button"
                   data-testid="searchIcon"
                   className="nav-search-button"
+                  onClick={getSearchResults}
                 >
                   <FaSearch className="nav-search-icon" />
                 </button>
               </li>
-              <li className="nav-menu-item">
+              <li className="nav-menu-item" onClick={onChangeSearchModeOff}>
                 <Link to="/" className="nav-link">
                   Home
                 </Link>
@@ -97,12 +108,15 @@ class Header extends Component {
         {showMobileMenu && (
           <div className="nav-menu-mobile">
             <ul className="nav-menu-list-mobile">
-              <li className="nav-menu-item-mobile">
+              <li
+                className="nav-menu-item-mobile"
+                onClick={onChangeSearchModeOff}
+              >
                 <Link to="/" className="nav-link">
                   Home
                 </Link>
               </li>
-              <li className="nav-menu-item-mobile">
+              <li className="nav-menu-item-mobile" onClick={onChangeSearchMode}>
                 <Link to="/" className="nav-link">
                   Search
                 </Link>
