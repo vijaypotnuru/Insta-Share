@@ -136,9 +136,14 @@ class Home extends Component {
       searchResultsList,
       isLikedIds,
     } = this.state
+
+    const pageActive = 'HOME'
+
     return (
       <>
         <Header
+          searchMode={searchMode}
+          pageActive={pageActive}
           onChangeSearchInput={this.onChangeSearchInput}
           searchInput={searchInput}
           getSearchResults={this.getSearchResults}

@@ -283,9 +283,10 @@ class MyProfile extends Component {
   }
 
   render() {
+    const pageActive = 'PROFILE'
     return (
       <>
-        <Header />
+        <Header pageActive={pageActive} />
         <div className="my-profile-container">
           {this.renderAllMyProfileViews()}
         </div>

@@ -316,18 +316,19 @@
 }
 
 .my-profile-success-view-posts-list-item {
-  height: 118px;
-  width: 118px;
+  /* height: 118px;
+  width: 118px; */
+  width: 33%;
   border-radius: 0px;
   margin-bottom: 4px;
 }
 
 @media screen and (min-width: 767px) {
   .my-profile-success-view-posts-list-item {
-    height: 330px;
-    width: 330px;
-    border-radius: 0px;
-    margin-bottom: 24px;
+    /* height: 330px;
+    width: 330px; */
+    width: 32%;
+    margin-bottom: 23px;
   }
 }
 

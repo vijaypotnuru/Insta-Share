@@ -5,7 +5,6 @@
   align-items: center;
   background-color: #ffffff;
   border-bottom: 1px solid #dbdbdb;
-
 }
 
 @media screen and (max-width: 768px) {
@@ -23,7 +22,6 @@
   justify-content: space-between;
   width: 90%;
   max-width: 1110px;
-
 }
 @media screen and (max-width: 767px) {
   .nav-content {
@@ -35,7 +33,6 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-
 }
 @media screen and (min-width: 768px) {
   .nav-bar-mobile-logo-container {
@@ -76,7 +73,6 @@
   justify-content: space-between;
   width: 100%;
   max-width: 1110px;
-
 }
 
 @media screen and (max-width: 767px) {
@@ -184,6 +180,10 @@ input[type='search']::-webkit-search-cancel-button {
   font-size: 14px;
   line-height: 18px;
   color: #262626;
+}
+
+.nav-link-active {
+  color: #4094ef;
 }
 
 .logout-desktop-btn {

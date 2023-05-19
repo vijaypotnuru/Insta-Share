@@ -33,7 +33,17 @@ class Header extends Component {
       onChangeSearchMode,
       onChangeSearchModeDesktop,
       onChangeSearchModeOff,
+      pageActive,
+      searchMode,
     } = this.props
+
+    const classHomeActive =
+      pageActive === 'HOME' && !searchMode ? 'nav-link-active' : ''
+
+    const classProfileActive = pageActive === 'PROFILE' ? 'nav-link-active' : ''
+
+    const classSearchModeActive = searchMode === true ? 'nav-link-active' : ''
+
     return (
       <nav className="nav-header">
         <div className="nav-content">
@@ -93,12 +103,15 @@ class Header extends Component {
                 </button>
               </li>
               <li className="nav-menu-item" onClick={onChangeSearchModeOff}>
-                <Link to="/" className="nav-link">
+                <Link to="/" className={`nav-link ${classHomeActive}`}>
                   Home
                 </Link>
               </li>
               <li className="nav-menu-item">
-                <Link to="/my-profile" className="nav-link">
+                <Link
+                  to="/my-profile"
+                  className={`nav-link ${classProfileActive}`}
+                >
                   Profile
                 </Link>
               </li>
@@ -120,17 +133,20 @@ class Header extends Component {
                 className="nav-menu-item-mobile"
                 onClick={onChangeSearchModeOff}
               >
-                <Link to="/" className="nav-link">
+                <Link to="/" className={`nav-link ${classHomeActive}`}>
                   Home
                 </Link>
               </li>
               <li className="nav-menu-item-mobile" onClick={onChangeSearchMode}>
-                <Link to="/" className="nav-link">
+                <Link to="/" className={`nav-link ${classSearchModeActive}`}>
                   Search
                 </Link>
               </li>
               <li className="nav-menu-item-mobile">
-                <Link to="/my-profile" className="nav-link">
+                <Link
+                  to="/my-profile"
+                  className={`nav-link ${classProfileActive}`}
+                >
                   Profile
                 </Link>
               </li>
