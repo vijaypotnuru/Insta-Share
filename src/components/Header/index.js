@@ -38,7 +38,11 @@ class Header extends Component {
       <nav className="nav-header">
         <div className="nav-content">
           <div className="nav-bar-mobile-logo-container">
-            <Link to="/" className="nav-bar-website-logo-link">
+            <Link
+              to="/"
+              className="nav-bar-website-logo-link"
+              onClick={onChangeSearchModeOff}
+            >
               <img
                 className="nav-website-logo"
                 src="https://res.cloudinary.com/dmlhm8dwi/image/upload/v1682664216/Standard_Collection_8website-logo-sm_rj35e0.png"
@@ -55,7 +59,11 @@ class Header extends Component {
             </button>
           </div>
           <div className="nav-bar-large-container">
-            <Link to="/" className="nav-bar-website-logo-link">
+            <Link
+              to="/"
+              className="nav-bar-website-logo-link"
+              onClick={onChangeSearchModeOff}
+            >
               <img
                 className="nav-website-logo"
                 src="https://res.cloudinary.com/dmlhm8dwi/image/upload/v1682664216/Standard_Collection_8website-logo-sm_rj35e0.png"
