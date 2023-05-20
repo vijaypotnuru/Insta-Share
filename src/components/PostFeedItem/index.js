@@ -28,6 +28,8 @@ const PostFeedItem = props => {
     selectUnlike(postId)
   }
 
+  const increamentLikeCount = isLikedIds.includes(postId) ? 1 : 0
+
   return (
     <li className="post-feed-item">
       <div className="post-feed-item-dp-section">
@@ -54,7 +56,7 @@ const PostFeedItem = props => {
               type="button"
               className="post-feed-item-icons-btn"
               onClick={onSelectLike}
-              data-testid="unLikeIcon"
+              testid="unLikeIcon"
             >
               <FcLike className="post-feed-item-Fclike-icon" />
             </button>
@@ -63,7 +65,7 @@ const PostFeedItem = props => {
               type="button"
               className="post-feed-item-icons-btn"
               onClick={onSelectUnLike}
-              data-testid="likeIcon"
+              testid="likeIcon"
             >
               <BsHeart className="post-feed-item-BsHeart-icon" />
             </button>
@@ -72,7 +74,9 @@ const PostFeedItem = props => {
           <FaRegComment className="post-feed-item-FaRegComment" />
           <BiShareAlt className="post-feed-item-BiShareAlt" />
         </div>
-        <p className="post-feed-item-likes-count">{likesCount} likes</p>
+        <p className="post-feed-item-likes-count">
+          {likesCount + increamentLikeCount} likes
+        </p>
         <p className="post-feed-item-caption">{postDetails.caption}</p>
         <ul className="post-feed-item-comments-list-container">
           {comments.map(eachcomment => (

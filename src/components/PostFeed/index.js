@@ -14,6 +14,8 @@ const apiStatusConstants = {
   inProgress: 'IN_PROGRESS',
 }
 
+// testid
+
 class PostFeed extends Component {
   state = {
     postFeedList: [],
@@ -132,10 +134,10 @@ class PostFeed extends Component {
 
   renderPostFeedLoadingView = () => (
     <>
-      <div className="mobile-post-feed-loader-container" data-testid="loader">
+      <div className="mobile-post-feed-loader-container" testid="loader">
         <Loader type="TailSpin" color="#4094EF" height={48} width={48} />
       </div>
-      <div className="desktop-post-feed-loader-container" data-testid="loader">
+      <div className="desktop-post-feed-loader-container" testid="loader">
         <Loader type="TailSpin" color="#4094EF" height={80} width={80} />
       </div>
     </>

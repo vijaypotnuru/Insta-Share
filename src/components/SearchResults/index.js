@@ -50,7 +50,7 @@ class SearchResults extends Component {
             <img
               className="search-results-success-view-search-not-found-image"
               src="https://res.cloudinary.com/dmlhm8dwi/image/upload/v1684481635/Groupsearch-notfound-img_x7hs6m.png"
-              alt="search-not-found"
+              alt="search not found"
             />
             <h1 className="search-results-success-view-search-not-found-heading">
               Search Not Found
@@ -66,16 +66,10 @@ class SearchResults extends Component {
 
   renderSearchResultLoaderView = () => (
     <>
-      <div
-        className="mobile-search-result-loader-container"
-        data-testid="loader"
-      >
+      <div className="mobile-search-result-loader-container" testid="loader">
         <Loader type="TailSpin" color="#4094EF" height={48} width={48} />
       </div>
-      <div
-        className="desktop-search-result-loader-container"
-        data-testid="loader"
-      >
+      <div className="desktop-search-result-loader-container" testid="loader">
         <Loader type="TailSpin" color="#4094EF" height={80} width={80} />
       </div>
     </>

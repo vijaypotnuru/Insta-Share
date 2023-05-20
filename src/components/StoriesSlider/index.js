@@ -16,6 +16,8 @@ const apiStatusConstants = {
   inProgress: 'IN_PROGRESS',
 }
 
+// testid
+
 class StoriesSlider extends Component {
   state = {
     usersStories: [],
@@ -61,7 +63,7 @@ class StoriesSlider extends Component {
 
   renderStoriesLoadingView = () => (
     <>
-      <div className="stories-loader-container" data-testid="loader">
+      <div className="stories-loader-container" testid="loader">
         <Loader
           type="TailSpin"
           color="#4094EF"
@@ -70,7 +72,7 @@ class StoriesSlider extends Component {
           className="mobile-stories-loader"
         />
       </div>
-      <div className="stories-loader-container" data-testid="loader">
+      <div className="stories-loader-container" testid="loader">
         <Loader
           type="TailSpin"
           color="#4094EF"
