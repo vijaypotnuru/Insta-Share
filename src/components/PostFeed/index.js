@@ -14,8 +14,6 @@ const apiStatusConstants = {
   inProgress: 'IN_PROGRESS',
 }
 
-// testid
-
 class PostFeed extends Component {
   state = {
     postFeedList: [],

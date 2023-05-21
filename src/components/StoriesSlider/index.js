@@ -120,6 +120,30 @@ class StoriesSlider extends Component {
     )
   }
 
+  onClickTryAgainButton = () => {
+    this.getStoriesData()
+  }
+
+  renderStoriesFailureView = () => (
+    <>
+      <img
+        className="stories-failure-view-image"
+        src="https://res.cloudinary.com/dmlhm8dwi/image/upload/v1682953244/alert-trianglefailure-warning-icon-image_qdzegs.png"
+        alt="failure view"
+      />
+      <p className="stories-failure-view-error">
+        Something went wrong. Please try again
+      </p>
+      <button
+        type="button"
+        className="stories-failure-view-try-again-btn"
+        onClick={this.onClickTryAgainButton}
+      >
+        Try again
+      </button>
+    </>
+  )
+
   renderAllSliderViews = () => {
     const {apiStatus} = this.state
 
@@ -128,6 +152,8 @@ class StoriesSlider extends Component {
         return this.renderStoriesSliderView()
       case apiStatusConstants.inProgress:
         return this.renderStoriesLoadingView()
+      case apiStatusConstants.failure:
+        return this.renderStoriesFailureView()
       default:
         return null
     }

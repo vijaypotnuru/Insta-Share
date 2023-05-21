@@ -97,7 +97,7 @@ class MyProfile extends Component {
             <div className="my-profile-success-view-profile-mobile-info-stats-container">
               <img
                 src={profilePic}
-                alt="profile_pic"
+                alt="my profile"
                 className="my-profile-success-view-profile-mobile-info-profile-pic"
               />
 
@@ -234,10 +234,10 @@ class MyProfile extends Component {
 
   renderAllMyProfileLoadingView = () => (
     <div className="my-profile-loading-view">
-      <div className="my-profile-mobile-loader-container" data-testid="loader">
+      <div className="my-profile-mobile-loader-container" testid="loader">
         <Loader type="TailSpin" color="#4094EF" height={32} width={32} />
       </div>
-      <div className="my-profile-desktop-loader-container" data-testid="loader">
+      <div className="my-profile-desktop-loader-container" testid="loader">
         <Loader type="TailSpin" color="#4094EF" height={53} width={53} />
       </div>
     </div>

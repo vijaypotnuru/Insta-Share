@@ -144,7 +144,7 @@ class UserProfile extends Component {
           <div className="user-profile-success-view-profile-desktop-info-container">
             <img
               src={profilePic}
-              alt="profile_pic"
+              alt="user profile"
               className="user-profile-success-view-profile-desktop-info-profile-pic"
             />
             <div className="user-profile-success-view-profile-desktop-info-stats-container">

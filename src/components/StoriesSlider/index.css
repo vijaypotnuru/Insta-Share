@@ -11,12 +11,10 @@
 }
 
 @media screen and (max-width: 767px) {
- .desktop-stories-loader {
-     display: none;
+  .desktop-stories-loader {
+    display: none;
+  }
 }
-}
-
-
 
 .stories-slider-container {
   display: flex;
@@ -76,4 +74,35 @@
     font-size: 30px;
     color: #334155;
   }
+}
+
+.stories-failure-view-image {
+  height: 24.000003814697266px;
+  width: 24.000003814697266px;
+  border-radius: 0px;
+}
+
+.stories-failure-view-error {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #262626;
+}
+
+.stories-failure-view-try-again-btn {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+  width: 102px;
+  height: 32px;
+  border: none;
+  background: #4094ef;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
 }
