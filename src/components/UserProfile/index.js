@@ -21,10 +21,23 @@ class UserProfile extends Component {
   state = {
     apiStatus: apiStatusConstants.initial,
     userProfileData: {},
+    isMobile: false,
   }
 
   componentDidMount() {
+    window.addEventListener('resize', this.handleWindowSizeChange)
+    this.handleWindowSizeChange()
+
     this.getUserProfileData()
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowSizeChange)
+  }
+
+  handleWindowSizeChange = () => {
+    const isMobile = window.innerWidth <= 768
+    this.setState({isMobile})
   }
 
   getUserProfileData = async () => {
@@ -76,7 +89,7 @@ class UserProfile extends Component {
   }
 
   renderUserProfileSuccessView = () => {
-    const {userProfileData} = this.state
+    const {userProfileData, isMobile} = this.state
     const {
       userId,
       username,
@@ -94,95 +107,99 @@ class UserProfile extends Component {
     return (
       <div className="user-profile-success-view">
         <div className="user-profile-success-view-profile-section">
-          {/* Profile info Mobile View */}
-          <div className="user-profile-success-view-profile-mobile-info-container">
-            <h1 className="user-profile-success-view-profile-mobile-info-username">
-              {username}
-            </h1>
-            <div className="user-profile-success-view-profile-mobile-info-stats-container">
-              <img
-                src={profilePic}
-                alt="profile_pic"
-                className="user-profile-success-view-profile-mobile-info-profile-pic"
-              />
+          {/* Profile info Mobile & Desktop View */}
 
-              <div className="user-profile-success-view-profile-mobile-info-stats">
-                <p className="user-profile-success-view-profile-mobile-info-stats-count">
-                  {postsCount}
-                </p>
-                <p className="user-profile-success-view-profile-mobile-info-stats-type">
-                  posts
-                </p>
-              </div>
-              <div className="user-profile-success-view-profile-mobile-info-stats">
-                <p className="user-profile-success-view-profile-mobile-info-stats-count">
-                  {followersCount}
-                </p>
-                <p className="user-profile-success-view-profile-mobile-info-stats-type">
-                  followers
-                </p>
-              </div>
-              <div className="user-profile-success-view-profile-mobile-info-stats">
-                <p className="user-profile-success-view-profile-mobile-info-stats-count">
-                  {followingCount}
-                </p>
-                <p className="user-profile-success-view-profile-mobile-info-stats-type">
-                  following
-                </p>
-              </div>
-            </div>
-            <div className="user-profile-success-view-profile-mobile-info-bio-container">
-              <p className="user-profile-success-view-profile-mobile-info-bio-userId">
-                {userId}
-              </p>
-              <p className="user-profile-success-view-profile-mobile-info-bio-description">
-                {userBio}
-              </p>
-            </div>
-          </div>
-          {/* Profile info Desktop View */}
-          <div className="user-profile-success-view-profile-desktop-info-container">
-            <img
-              src={profilePic}
-              alt="user profile"
-              className="user-profile-success-view-profile-desktop-info-profile-pic"
-            />
-            <div className="user-profile-success-view-profile-desktop-info-stats-container">
-              <h1 className="user-profile-success-view-profile-desktop-info-stats-username">
+          {isMobile ? (
+            <div className="user-profile-success-view-profile-mobile-info-container">
+              <h1 className="user-profile-success-view-profile-mobile-info-username">
                 {username}
               </h1>
-              <div className="user-profile-success-view-profile-desktop-info-stats-details-container">
-                <p className="user-profile-success-view-profile-desktop-info-stats-details-type">
-                  <span className="user-profile-success-view-profile-desktop-info-stats-details-count">
+              <div className="user-profile-success-view-profile-mobile-info-stats-container">
+                <img
+                  src={profilePic}
+                  alt="profile_pic"
+                  className="user-profile-success-view-profile-mobile-info-profile-pic"
+                />
+
+                <div className="user-profile-success-view-profile-mobile-info-stats">
+                  <p className="user-profile-success-view-profile-mobile-info-stats-count">
                     {postsCount}
-                  </span>{' '}
-                  posts
-                </p>
-
-                <p className="user-profile-success-view-profile-desktop-info-stats-details-type">
-                  <span className="user-profile-success-view-profile-desktop-info-stats-details-count">
+                  </p>
+                  <p className="user-profile-success-view-profile-mobile-info-stats-type">
+                    posts
+                  </p>
+                </div>
+                <div className="user-profile-success-view-profile-mobile-info-stats">
+                  <p className="user-profile-success-view-profile-mobile-info-stats-count">
                     {followersCount}
-                  </span>{' '}
-                  followers
-                </p>
-
-                <p className="user-profile-success-view-profile-desktop-info-stats-details-type">
-                  <span className="user-profile-success-view-profile-desktop-info-stats-details-count">
+                  </p>
+                  <p className="user-profile-success-view-profile-mobile-info-stats-type">
+                    followers
+                  </p>
+                </div>
+                <div className="user-profile-success-view-profile-mobile-info-stats">
+                  <p className="user-profile-success-view-profile-mobile-info-stats-count">
                     {followingCount}
-                  </span>{' '}
-                  following
-                </p>
+                  </p>
+                  <p className="user-profile-success-view-profile-mobile-info-stats-type">
+                    following
+                  </p>
+                </div>
               </div>
-              <div className="user-profile-success-view-profile-desktop-info-bio-container">
-                <p className="user-profile-success-view-profile-desktop-info-bio-userId">
+              <div className="user-profile-success-view-profile-mobile-info-bio-container">
+                <p className="user-profile-success-view-profile-mobile-info-bio-userId">
                   {userId}
                 </p>
-                <p className="user-profile-success-view-profile-desktop-info-bio-description">
+                <p className="user-profile-success-view-profile-mobile-info-bio-description">
                   {userBio}
                 </p>
               </div>
             </div>
-          </div>
+          ) : (
+            <div className="user-profile-success-view-profile-desktop-info-container">
+              <img
+                src={profilePic}
+                alt="user profile"
+                className="user-profile-success-view-profile-desktop-info-profile-pic"
+              />
+              <div className="user-profile-success-view-profile-desktop-info-stats-container">
+                <h1 className="user-profile-success-view-profile-desktop-info-stats-username">
+                  {username}
+                </h1>
+                <div className="user-profile-success-view-profile-desktop-info-stats-details-container">
+                  <p className="user-profile-success-view-profile-desktop-info-stats-details-type">
+                    <span className="user-profile-success-view-profile-desktop-info-stats-details-count">
+                      {postsCount}
+                    </span>{' '}
+                    posts
+                  </p>
+
+                  <p className="user-profile-success-view-profile-desktop-info-stats-details-type">
+                    <span className="user-profile-success-view-profile-desktop-info-stats-details-count">
+                      {followersCount}
+                    </span>{' '}
+                    followers
+                  </p>
+
+                  <p className="user-profile-success-view-profile-desktop-info-stats-details-type">
+                    <span className="user-profile-success-view-profile-desktop-info-stats-details-count">
+                      {followingCount}
+                    </span>{' '}
+                    following
+                  </p>
+                </div>
+                <div className="user-profile-success-view-profile-desktop-info-bio-container">
+                  <p className="user-profile-success-view-profile-desktop-info-bio-userId">
+                    {userId}
+                  </p>
+                  <p className="user-profile-success-view-profile-desktop-info-bio-description">
+                    {userBio}
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Profile Stories Section */}
           <ul className="user-profile-success-view-stories-list-container">
             {stories.map(eachStory => (
@@ -237,16 +254,26 @@ class UserProfile extends Component {
     )
   }
 
-  renderAllUserProfileLoadingView = () => (
-    <div className="user-profile-loading-view">
-      <div className="user-profile-mobile-loader-container" testid="loader">
-        <Loader type="TailSpin" color="#4094EF" height={32} width={32} />
+  renderAllUserProfileLoadingView = () => {
+    const {isMobile} = this.state
+
+    return (
+      <div className="user-profile-loading-view">
+        {isMobile ? (
+          <div className="user-profile-mobile-loader-container" testid="loader">
+            <Loader type="TailSpin" color="#4094EF" height={32} width={32} />
+          </div>
+        ) : (
+          <div
+            className="user-profile-desktop-loader-container"
+            testid="loader"
+          >
+            <Loader type="TailSpin" color="#4094EF" height={53} width={53} />
+          </div>
+        )}
       </div>
-      <div className="user-profile-desktop-loader-container" testid="loader">
-        <Loader type="TailSpin" color="#4094EF" height={53} width={53} />
-      </div>
-    </div>
-  )
+    )
+  }
 
   onClickTryAgainBtn = () => {
     this.getUserProfileData()

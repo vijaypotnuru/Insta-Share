@@ -19,10 +19,23 @@ class PostFeed extends Component {
     postFeedList: [],
     apiStatus: apiStatusConstants.initial,
     isLikedIds: [],
+    isMobile: false,
   }
 
   componentDidMount() {
+    window.addEventListener('resize', this.handleWindowSizeChange)
+    this.handleWindowSizeChange()
+
     this.getPostFeedData()
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowSizeChange)
+  }
+
+  handleWindowSizeChange = () => {
+    const isMobile = window.innerWidth <= 768
+    this.setState({isMobile})
   }
 
   getPostFeedData = async () => {
@@ -130,16 +143,19 @@ class PostFeed extends Component {
     )
   }
 
-  renderPostFeedLoadingView = () => (
-    <>
+  renderPostFeedLoadingView = () => {
+    const {isMobile} = this.state
+
+    return isMobile ? (
       <div className="mobile-post-feed-loader-container" testid="loader">
         <Loader type="TailSpin" color="#4094EF" height={48} width={48} />
       </div>
+    ) : (
       <div className="desktop-post-feed-loader-container" testid="loader">
         <Loader type="TailSpin" color="#4094EF" height={80} width={80} />
       </div>
-    </>
-  )
+    )
+  }
 
   onClickPostFeedFailureTryAgain = () => {
     this.getPostFeedData()

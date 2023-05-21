@@ -38,11 +38,11 @@
   padding-right: 8px;
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .user-profile-success-view-profile-mobile-info-container {
     display: none;
   }
-}
+} */
 
 .user-profile-success-view-profile-mobile-info-username {
   font-family: 'Roboto';
@@ -128,11 +128,11 @@
   padding-bottom: 64px;
 }
 
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
   .user-profile-success-view-profile-desktop-info-container {
     display: none;
   }
-}
+} */
 
 .user-profile-success-view-profile-desktop-info-profile-pic {
   height: 180px;

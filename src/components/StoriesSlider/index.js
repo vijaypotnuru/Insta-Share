@@ -22,10 +22,23 @@ class StoriesSlider extends Component {
   state = {
     usersStories: [],
     apiStatus: apiStatusConstants.initial,
+    isMobile: false,
   }
 
   componentDidMount() {
+    window.addEventListener('resize', this.handleWindowSizeChange)
+    this.handleWindowSizeChange()
+
     this.getStoriesData()
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowSizeChange)
+  }
+
+  handleWindowSizeChange = () => {
+    const isMobile = window.innerWidth <= 768
+    this.setState({isMobile})
   }
 
   getStoriesData = async () => {
@@ -61,8 +74,10 @@ class StoriesSlider extends Component {
     }
   }
 
-  renderStoriesLoadingView = () => (
-    <>
+  renderStoriesLoadingView = () => {
+    const {isMobile} = this.state
+
+    return isMobile ? (
       <div className="stories-loader-container" testid="loader">
         <Loader
           type="TailSpin"
@@ -72,6 +87,7 @@ class StoriesSlider extends Component {
           className="mobile-stories-loader"
         />
       </div>
+    ) : (
       <div className="stories-loader-container" testid="loader">
         <Loader
           type="TailSpin"
@@ -81,11 +97,11 @@ class StoriesSlider extends Component {
           className="desktop-stories-loader"
         />
       </div>
-    </>
-  )
+    )
+  }
 
   renderStoriesSliderView = () => {
-    const {usersStories} = this.state
+    const {usersStories, isMobile} = this.state
 
     const mobileSettings = {
       dots: false,
@@ -100,23 +116,22 @@ class StoriesSlider extends Component {
       centerPadding: '50px',
     }
 
-    return (
-      <>
-        <ul className="mobile-stories-slider">
-          <Slider {...mobileSettings}>
-            {usersStories.map(eachStory => (
-              <StoryItem key={eachStory.userId} storyDetails={eachStory} />
-            ))}
-          </Slider>
-        </ul>
-        <ul className="desktop-stories-slider">
-          <Slider {...desktopSettings}>
-            {usersStories.map(eachStory => (
-              <StoryItem key={eachStory.userId} storyDetails={eachStory} />
-            ))}
-          </Slider>
-        </ul>
-      </>
+    return isMobile ? (
+      <ul className="mobile-stories-slider">
+        <Slider {...mobileSettings}>
+          {usersStories.map(eachStory => (
+            <StoryItem key={eachStory.userId} storyDetails={eachStory} />
+          ))}
+        </Slider>
+      </ul>
+    ) : (
+      <ul className="desktop-stories-slider">
+        <Slider {...desktopSettings}>
+          {usersStories.map(eachStory => (
+            <StoryItem key={eachStory.userId} storyDetails={eachStory} />
+          ))}
+        </Slider>
+      </ul>
     )
   }
 
