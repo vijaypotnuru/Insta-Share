@@ -1,34 +1,85 @@
-In this project let's build a **Insta Share App** by applying the concepts we have learned till now. This project allows you to practice the concepts and techniques learned till React Course and apply them in a concrete project.
+# React Mini Project (*****Insta Share*****)
 
-You will demonstrate your skills by creating an app that will fetch data from an internal server using a class component, displaying that data, using **component lifecycle methods**, **routing** concepts, **authentication**, and **authorization**, and adding responsiveness to the website.
+## ***Website***:[https://durgainstashare.ccbp.tech](https://durgainstashare.ccbp.tech/)🔗
 
-This is an individual assessment. All work must be your own.
 
-### Prerequisites
+Throughout the development of the <a  href="https://durgainstashare.ccbp.tech/"  target="_blank">**Insta Share App**</a>, I had the opportunity to apply the knowledge and skills I acquired during the React course. This project was a testament to my growth and proficiency in <a  href="https://react.dev/"  target="_blank">**Reactjs**</a> development.
 
-#### UI Prerequisites
+The app successfully fetched data from an internal server using a class component, demonstrating my understanding of <a  href="https://legacy.reactjs.org/docs/react-component.html"  target="_blank"> **Component lifecycle methods**</a> and data management. The displayed data was presented in an appealing and organized manner, showcasing my ability to create visually engaging user interfaces.
 
-<details>
-<summary>Click to view</summary>
+By incorporating <a  href="https://www.w3schools.com/react/react_router.asp"  target="_blank"> **Routing Concepts**</a> , I crafted a seamless user experience, allowing users to effortlessly navigate different sections of the app. The implementation of authentication and authorization added an important layer of security, ensuring that only authorized users could access specific features.
 
-- What is Figma?
-  - Figma is a vector graphics editor and prototyping tool which is primarily web-based. You can check more info on the <a href="https://www.figma.com/" target="_blank">Website</a>
-- Create a Free account in Figma
-  - Kindly follow the instructions as shown in <a href="https://www.youtube.com/watch?v=hrHL2VLMl7g" target="_blank">this</a> video to create a Free Figma account. Watch the video upto **00:55**
-- How to Check CSS in Figma?
-  - Kindly follow the instructions as shown in <a href="https://youtu.be/B242nuM3y2s?t=80" target="_blank">this</a> video to check CSS in the Figma screen. Watch the video upto **02:45**
-- Export Images in Figma screen
+A notable achievement in this project was the creation of a responsive website. By employing responsive design principles and <a  href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp"  target="_blank"> **Media queries**</a> , I ensured that the app looked and functioned flawlessly across various devices and screen sizes.
 
-  - Kindly follow the instructions as shown in <a href="https://www.youtube.com/watch?v=NpzL1MONwaw" target="_blank">this</a> video to export images from the Figma screen
-  - Click on the Export button to get Export options as shown in the below image
+the <a  href="https://durgainstashare.ccbp.tech/"  target="_blank">**Insta Share App**</a> stands as a remarkable showcase of my React proficiency. This project not only solidified my understanding of <a  href="https://www.w3schools.com/react/react_router.asp"  target="_blank"> **Routing Concepts**</a> but also enhanced my problem-solving abilities. I am proud of the final result and the valuable knowledge I gained throughout its development.
 
-  <div style="text-align:center;margin:10px 0px 0px 45px;width:200px;">
-    <img src="https://assets.ccbp.in/frontend/react-js/figma-export-option.png" />
-  </div>
+As I continue my journey in web development, I am excited to build upon this experience and explore new possibilities with <a  href="https://react.dev/"  target="_blank">**Reactjs**</a> . The Insta Share App serves as a strong foundation for future projects, and I am eager to apply my skills to create even more innovative and impactful applications.
 
-- Upload your exported images from Figma to Cloudinary and get image URLs from Cloudinary. Refer <a href="https://learning.ccbp.in/projects/course?c_id=fe4c935d-3ad5-4bb8-a1a5-9b045ae70010&s_id=2f72d6fe-09a7-4c0a-b0db-196740c853a0&t_id=6535e48d-fb4e-45c4-9654-3da423c79e26" target="_blank">this</a> session for better understanding
 
-</details>
+# Functionalities of Insta-Share
+
+*****I have successfully implemented all the required functionalities in the Insta Share App:*****
+
+**Login Route:**
+
+- Users can enter their username and password.
+- If invalid credentials are provided, an error message received from the server will be displayed.
+- Upon successful login, the user will be navigated to the Home Route.
+- If an unauthenticated user tries to access the Home Route, Profile Route, or User Profile Route, they will be redirected to the Login Route.
+- Similarly, an authenticated user attempting to access the Login Route will be redirected to the Home Route.
+
+**Home Route:**
+
+- When an authenticated user opens the Home Route, an HTTP GET request will be made to the User Stories API URL with the jwt_token in the Cookies.
+- A loader will be displayed while fetching the data, and once successful, the response will be displayed.
+- If the request fails, an appropriate error message will be displayed.
+- Users can click the Retry button to make another HTTP GET request.
+- An HTTP GET request will also be made to the Posts API URL with the jwt_token in the Cookies to fetch post data.
+- Initially, each post will display icons for liking, commenting, and sharing.
+- Clicking on a username within a post will navigate to the User Details Route.
+- Users can like and unlike posts, which will trigger HTTP POST requests to the Post Like API URL and update the like status and like count accordingly.
+
+**Header:**
+
+- Clicking on the website logo or the Home link in the header will navigate to the Home Route.
+- Clicking on the Profile link will navigate to the My Profile Route.
+- Clicking the Logout button will navigate to the Login Route.
+
+**User Profile Route:**
+
+- When an authenticated user opens the User Profile Route, an HTTP GET request will be made to the User Profile API URL with the jwt_token in the Cookies and user_id as a path parameter.
+- A loader will be displayed while fetching the data, and once successful, the response will be displayed.
+- If the request fails, an appropriate error message will be displayed.
+- Users can click the Retry button to make another HTTP GET request.
+- The list of posts section will include the BsGrid3X3 icon.
+- If the user has no posts, a "No Posts" view will be displayed.
+- Clicking on a username within a post will navigate to the User Details Route.
+- All functionalities present in the Header will work accordingly.
+
+**My Profile Route:**
+
+- When an authenticated user opens the My Profile Route, an HTTP GET request will be made to the My Profile API URL with the jwt_token in the Cookies.
+- A loader will be displayed while fetching the data, and once successful, the response will be displayed.
+- If the request fails, an appropriate error message will be displayed.
+- Users can click the Retry button to make another HTTP GET request.
+- The list of posts section will include the BsGrid3X3 icon.
+
+**Search Functionality:**
+
+- An authenticated user can search posts by clicking on the Search icon and providing a search term.
+- An HTTP GET request will be made to the Search Posts API URL with the jwt_token in the Cookies and the search post as a query parameter.
+- A loader will be displayed while fetching the data, and once successful, the response will be displayed.
+- If the request fails, an appropriate error message will be displayed.
+- If the search posts are empty, a "Search Not Found" message will be displayed.
+- Initially, each post will display icons for liking, commenting, and sharing.
+- Clicking on a username within a post will navigate to the User Details Route.
+- Users can like and unlike posts, which will trigger HTTP POST requests to the Post Like API URL and update the like status
+
+**Not Found Route:**
+
+-   If a user enters a random path in the URL, the page will be redirected to the Not Found Route.
+-   The Not Found Route will display a suitable message indicating that the requested page or route does not exist.
+
 
 #### Design Files
 
@@ -51,117 +102,7 @@ This is an individual assessment. All work must be your own.
 
 </details>
 
-### Completion Instructions
 
-<details>
-<summary>Functionality to be added</summary>
-<br />
-The app must have the following functionalities
-
-- **Login Route**
-
-  - When an invalid username and password are provided and the Login button is clicked, then the respective error message received from the response should be displayed
-  - When a valid username and password are provided and the Login button is clicked, then the page should be navigated to the Home Route
-  - When an _unauthenticated_ user tries to access the Home Route, Profile Route, and User Profile Route, then the page should be navigated to the Login Route
-  - When an _authenticated_ user tries to access the Home Route, Profile Route, and User Profile Route, then the page should be navigated to the respective route
-  - When an _authenticated_ user tries to access the Login Route, then the page should be navigated to the Home Route
-
-- **Home Route**
-
-  - When an _authenticated_ user opens the Home Route
-
-    - An HTTP GET request should be made to **User Stories API URL** with `jwt_token` in the Cookies
-
-      - **_Loader_** should be displayed while fetching the data
-      - After the data is fetched successfully, the response received should be displayed
-      - If the HTTP GET request made is unsuccessful, then the failure view given in the **Figma** screens should be displayed
-        - When the **Retry** button is clicked, an HTTP GET request should be made to the **User Stories API URL**
-
-    - An HTTP GET request should be made to the **Posts API URL** with `jwt_token` in the Cookies
-
-      - **_Loader_** should be displayed while fetching the data
-      - After the data is fetched successfully, the response received should be displayed
-      - If the HTTP GET request made is unsuccessful, then the failure view given in the **Figma** screens should be displayed
-        - When the **Retry** button is clicked, an HTTP GET request should be made to the **Posts API URL**
-
-    - Initially for every Post **BsHeart**, **FaRegComment**, **BiShareAlt** from `react-icons` should be displayed
-    - When the **username** in the particular post is clicked, then the page should be navigated to the User Details Route
-    - When the **Like** icon (FcLike) is clicked,
-      - An HTTP POST request should be made to the **Post Like API URL** with `like_status` as `true`
-      - It should change to **Unlike** icon (BsHeart)
-      - Likes count of that particular post should be incremented by one
-    - When the **Unlike** icon is clicked,
-
-      - An HTTP POST request should be made to the **Post Like API URL** with `like_status` as `false`
-      - It should change to **Like** icon
-      - Likes count of that particular post should be decremented by one
-
-    - **Header**
-
-      - When the Website logo is clicked, then the page should be navigated to the Home Route
-      - When the **Home** link in the Header is clicked, then the page should be navigated to the Home Route
-      - When the **Profile** link in the Header is clicked, then the page should be navigated to the My Profile Route
-      - When the **Logout** button is clicked, then the page should be navigated to the Login Route
-
-- **User Profile Route**
-
-  - When an _authenticated_ user opens the User Profile Route
-
-    - An HTTP GET request should be made to the **User Profile API URL** with `jwt_token` in the Cookies and `user_id` as a path parameter
-
-      - **_Loader_** should be displayed while fetching the data
-      - After the data is fetched successfully, the response received should be displayed
-      - If the HTTP GET request made is unsuccessful, then the failure view given in the **Figma** screens should be displayed
-        - When the **Retry** button is clicked, an HTTP GET request should be made to the **User Profile API URL**
-
-    - The list of posts section should contain the **BsGrid3X3** from `react-icons`
-    - If the list of posts are empty, then the No Posts View in the **Figma** screens should be displayed
-    - If the list of posts are empty, then the **BiCamera** from `react-icons` should be displayed
-    - All the header functionalities mentioned in the Home Route should work in this route accordingly
-
-- **My Profile Route**
-
-  - When an _authenticated_ user opens the My Profile Route
-
-    - An HTTP GET request should be made to the **My Profile API URL** with `jwt_token` in the Cookies
-
-      - **_Loader_** should be displayed while fetching the data
-      - After the data is fetched successfully, the response received should be displayed
-      - If the HTTP GET request made is unsuccessful, then the failure view given in the **Figma** screens should be displayed
-        - When the **Retry** button is clicked, an HTTP GET request should be made to the **My Profile API URL**
-
-    - The list of posts section should contain the **BsGrid3X3** from `react-icons`
-
-- **Search Functionality**
-
-  - When an _authenticated_ user search posts using **post caption** by clicking on the Search icon (`FaSearch` from `react-icons`)
-
-    - An HTTP GET request should be made to the **Search Posts API URL** with `jwt_token` in the Cookies and search post as a query parameter
-
-      - **_Loader_** should be displayed while fetching the data
-      - After the data is fetched successfully, the response received should be displayed
-      - If the HTTP GET request made is unsuccessful, then the failure view given in the **Figma** screens should be displayed
-        - When the **Retry** button is clicked, an HTTP GET request should be made to the **Search Posts API URL**
-
-    - If the search posts are empty, then the Search Not Found View in the **Figma** screens should be displayed
-    - Initially for every Post **BsHeart**, **FaRegComment**, **BiShareAlt** from `react-icons` should be displayed
-    - When the **username** in the particular post is clicked, then the page should be navigated to the User Details Route
-    - When the **Like** icon is clicked,
-      - An HTTP POST request should be made to the **Post Like API URL** with `like_status` as `true`
-      - It should change to **Unlike** icon
-      - Likes count of that particular post should be incremented by one
-    - When the **Unlike** icon is clicked,
-      - An HTTP POST request should be made to the **Post Like API URL** with `like_status` as `false`
-      - It should change to **Like** icon
-      - Likes count of that particular post should be decremented by one
-
-- **Not Found Route**
-
-  - When a random path is provided in the URL, then the page should be navigated to the Not Found Route
-
-- Users should be able to view the website responsively in mobile view, tablet view as well
-
-</details>
 
 ### Quick Tips
 
@@ -190,96 +131,6 @@ The app must have the following functionalities
 - In this project, the data you have sent through `POST-APIs` are not saved in the `Database`. If you refresh the page, the changes will not be persisted
 - Whenever you do a `POST-API` call, we are sending a mock object as a response
 
-<details>
-<summary>Click to view</summary>
-
-<br/>
-
-**The following instructions are required for the tests to pass**
-
-- **Note:**
-
-  - Don't use any third-party packages other than packages mentioned in the **Quick Tips**
-  - Use media queries for responsiveness. Instead of rendering the same elements twice for responsiveness.
-  - For Mini Projects, you have to use normal HTML elements to style the React Components. Usage of `styled-components` (CSS in JS) to style React components are not supported in Mini Projects. Test cases won't be passed, if you use styled components
-  - Refer to the below Example for the usage of `testid` in the HTML elements.
-
-    - Example: `<div testid="postItem" className="post-item"/>`.
-
-- **Routes**
-
-  - Render `Login` Route component when the path in URL matches `/login`
-  - Render `Home` Route component when the path in URL matches `/`
-  - Render `MyProfile` Route component when the path in URL matches `/my-profile`
-  - Render `UserProfile` Route component when the path in URL matches `/users/:id`
-    - **Note:-** use the specific user id in place of id
-
-- Wrap the `Loader` component with an HTML container element and add the `testid` attribute value as **loader** to it
-
-  ```jsx
-  <div className="loader-container" testid="loader">
-    <Loader type="TailSpin" color="#4094EF" height={50} width={50} />
-  </div>
-  ```
-
-- Wrap the Clickable `react-icons` components with an HTML button element and add the `testid` attribute values accordingly
-
-  ```jsx
-  <button type="button" testid="searchIcon">
-    <FaSearch />
-  </button>
-  ```
-
-- The Failure View image should consist of alt attribute value as `failure view`
-
-- **Login Route**
-
-  - The Landing image should consist of alt attribute value as `website login`
-  - The Insta Share image should consist of alt attribute value as `website logo`
-  - The Cookies should be set by using the key name `jwt_token`
-
-- **Home Route**
-
-  - User Stories List
-    - User Stories List images should consist of alt attribute value as `user story`
-  - Posts List
-    - The Post User Profile image should consist of alt attribute value as `post author profile`
-    - The Post image should consist of alt attribute value as `post`
-    - The HTML button element with Like icon (`BsHeart` from `react-icons`) should contain the `testid` attribute value as `likeIcon`
-    - The HTML button element with Dis Like icon (`FcLike` from `react-icons`) should contain the `testid` attribute value as `unLikeIcon`
-
-- **User Profile Route**
-
-  - The Profile image should consist of alt attribute value as `user profile`
-  - Story images should consist of alt attribute value as `user story`
-  - Post images should consist of alt attribute value as `user post`
-
-- **My Profile Route**
-
-  - The Profile image should consist of alt attribute value as `my profile`
-  - Story images should consist of alt attribute value as `my story`
-  - Post images should consist of alt attribute value as `my post`
-
-- **Search Functionality**
-
-  - When Search Results are not empty
-    - The Author Profile image in the post should consist of alt attribute value as `post author profile`
-    - The Post image should consist of alt attribute value as `post`
-    - The HTML button element with Like icon (`BsHeart` from `react-icons`) should contain the `testid` attribute value as `likeIcon`
-    - The HTML button element with Dis Like icon (`FcLike` from `react-icons`) should contain the `testid` attribute value as `unLikeIcon`
-  - When Search Results are Empty
-    - Search Results Not Found image should consist of alt attribute value as `search not found`
-
-- **Not Found Route**
-
-  - The page not found image should consist of alt attribute value as `page not found`
-
-- **Header**
-
-  - The Insta Share image should consist of alt attribute value as `website logo`
-  - The HTML button element with Search icon (`FaSearch` from `react-icons`) should contain the `testid` attribute value as `searchIcon`
-
-</details>
 
 ### Resources
 
@@ -626,14 +477,8 @@ Returns a response containing the list of search posts.
 <br/>
 </details>
 
-### Project Submission Instructions
 
-- For Mini Projects, you can submit the test cases at your own pace. But we suggest you to submit the code to know the percentage of completion through test cases and that score will be considered for your interviews
+***Website***:[https://durgainstashare.ccbp.tech](https://durgainstashare.ccbp.tech/)🔗
 
-- Also it's important to publish your code frequently using `Step - 4` in the Instructions tab
 
-> ### _Things to Keep in Mind_
->
-> - All components you implement should go in the `src/components` directory.
-> - **Do not remove the pre-filled code**
-> - Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.
+# Thank You All🙂

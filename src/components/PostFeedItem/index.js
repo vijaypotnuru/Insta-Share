@@ -56,7 +56,7 @@ const PostFeedItem = props => {
               type="button"
               className="post-feed-item-icons-btn"
               onClick={onSelectLike}
-              testid="unLikeIcon"
+              data-testid="unLikeIcon"
             >
               <FcLike className="post-feed-item-Fclike-icon" />
             </button>
@@ -65,7 +65,7 @@ const PostFeedItem = props => {
               type="button"
               className="post-feed-item-icons-btn"
               onClick={onSelectUnLike}
-              testid="likeIcon"
+              data-testid="likeIcon"
             >
               <BsHeart className="post-feed-item-BsHeart-icon" />
             </button>

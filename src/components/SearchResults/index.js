@@ -66,10 +66,16 @@ class SearchResults extends Component {
 
   renderSearchResultLoaderView = () => (
     <>
-      <div className="mobile-search-result-loader-container" testid="loader">
+      <div
+        className="mobile-search-result-loader-container"
+        data-testid="loader"
+      >
         <Loader type="TailSpin" color="#4094EF" height={48} width={48} />
       </div>
-      <div className="desktop-search-result-loader-container" testid="loader">
+      <div
+        className="desktop-search-result-loader-container"
+        data-testid="loader"
+      >
         <Loader type="TailSpin" color="#4094EF" height={80} width={80} />
       </div>
     </>

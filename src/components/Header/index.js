@@ -95,7 +95,7 @@ class Header extends Component {
                 />
                 <button
                   type="button"
-                  testid="searchIcon"
+                  data-testid="searchIcon"
                   className="nav-search-button"
                   onClick={getSearchResults}
                 >

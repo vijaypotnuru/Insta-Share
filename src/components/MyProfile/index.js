@@ -85,7 +85,7 @@ class MyProfile extends Component {
 
   renderMyProfileSuccessView = () => {
     const {myProfileData, isMobile} = this.state
-    console.log(isMobile)
+    // console.log(isMobile)
     const {
       userId,
       username,
@@ -257,13 +257,16 @@ class MyProfile extends Component {
       <>
         <div className="my-profile-loading-view">
           {isMobile ? (
-            <div className="my-profile-mobile-loader-container" testid="loader">
+            <div
+              className="my-profile-mobile-loader-container"
+              data-testid="loader"
+            >
               <Loader type="TailSpin" color="#4094EF" height={32} width={32} />
             </div>
           ) : (
             <div
               className="my-profile-desktop-loader-container"
-              testid="loader"
+              data-testid="loader"
             >
               <Loader type="TailSpin" color="#4094EF" height={53} width={53} />
             </div>

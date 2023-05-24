@@ -78,7 +78,7 @@ class StoriesSlider extends Component {
     const {isMobile} = this.state
 
     return isMobile ? (
-      <div className="stories-loader-container" testid="loader">
+      <div className="stories-loader-container" data-testid="loader">
         <Loader
           type="TailSpin"
           color="#4094EF"
@@ -88,7 +88,7 @@ class StoriesSlider extends Component {
         />
       </div>
     ) : (
-      <div className="stories-loader-container" testid="loader">
+      <div className="stories-loader-container" data-testid="loader">
         <Loader
           type="TailSpin"
           color="#4094EF"

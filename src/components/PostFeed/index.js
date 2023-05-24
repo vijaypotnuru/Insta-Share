@@ -147,11 +147,11 @@ class PostFeed extends Component {
     const {isMobile} = this.state
 
     return isMobile ? (
-      <div className="mobile-post-feed-loader-container" testid="loader">
+      <div className="mobile-post-feed-loader-container" data-testid="loader">
         <Loader type="TailSpin" color="#4094EF" height={48} width={48} />
       </div>
     ) : (
-      <div className="desktop-post-feed-loader-container" testid="loader">
+      <div className="desktop-post-feed-loader-container" data-testid="loader">
         <Loader type="TailSpin" color="#4094EF" height={80} width={80} />
       </div>
     )

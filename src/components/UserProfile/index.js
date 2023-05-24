@@ -260,13 +260,16 @@ class UserProfile extends Component {
     return (
       <div className="user-profile-loading-view">
         {isMobile ? (
-          <div className="user-profile-mobile-loader-container" testid="loader">
+          <div
+            className="user-profile-mobile-loader-container"
+            data-testid="loader"
+          >
             <Loader type="TailSpin" color="#4094EF" height={32} width={32} />
           </div>
         ) : (
           <div
             className="user-profile-desktop-loader-container"
-            testid="loader"
+            data-testid="loader"
           >
             <Loader type="TailSpin" color="#4094EF" height={53} width={53} />
           </div>
