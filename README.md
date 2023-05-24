@@ -3,7 +3,7 @@
 ## ***Website***:[https://durgainstashare.ccbp.tech](https://durgainstashare.ccbp.tech/)🔗
 
 
-Throughout the development of the <a  href="https://durgainstashare.ccbp.tech/"  target="_blank">**Insta Share App**</a>, I had the opportunity to apply the knowledge and skills I acquired during the React course. This project was a testament to my growth and proficiency in <a  href="https://react.dev/"  target="_blank">**Reactjs**</a> development.
+Throughout the development of the <a  href="https://durgainstashare.ccbp.tech/"  >**Insta Share App**</a>, I had the opportunity to apply the knowledge and skills I acquired during the React course. This project was a testament to my growth and proficiency in <a  href="https://react.dev/"  target="_blank">**Reactjs**</a> development.
 
 The app successfully fetched data from an internal server using a class component, demonstrating my understanding of <a  href="https://legacy.reactjs.org/docs/react-component.html"  target="_blank"> **Component lifecycle methods**</a> and data management. The displayed data was presented in an appealing and organized manner, showcasing my ability to create visually engaging user interfaces.
 
