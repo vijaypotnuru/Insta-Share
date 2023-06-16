@@ -1,7 +1,73 @@
-# React Mini Project (*****Insta Share*****)
+# React Mini Project (**\***Insta Share**\***)
 
-## ***Website***:[https://durgainstashare.ccbp.tech](https://durgainstashare.ccbp.tech/)🔗
+## **_Website_**:[https://durgainstashare.ccbp.tech](https://durgainstashare.ccbp.tech/)🔗
 
+### User Credentials 
+
+<details>
+<summary>Click to view user credentials 👈</summary>
+
+<br/>
+
+**You can use any one of the following credentials**
+
+```text
+  username: aakash
+  password: sky@007
+```
+
+```text
+  username: agastya
+  password: myth#789
+```
+
+```text
+  username: advika
+  password: world@5
+```
+
+```text
+  username: binita
+  password: modest*6
+```
+
+```text
+  username: chetan
+  password: vigor$life
+```
+
+```text
+  username: deepak
+  password: lightstar@1
+```
+
+```text
+  username: harshad
+  password: joy@85
+```
+
+```text
+  username: kapil
+  password: moon$008
+```
+
+```text
+ username: rahul
+ password: rahul@2021
+```
+
+```text
+  username: shravya
+  password: musical#stone
+```
+
+```text
+  username: saira
+  password: princess@9
+```
+
+<br/>
+</details>
 
 Throughout the development of the <a  href="https://durgainstashare.ccbp.tech/"  >**Insta Share App**</a>, I had the opportunity to apply the knowledge and skills I acquired during the React course. This project was a testament to my growth and proficiency in <a  href="https://react.dev/"  target="_blank">**Reactjs**</a> development.
 
@@ -15,10 +81,9 @@ the <a  href="https://durgainstashare.ccbp.tech/"  target="_blank">**Insta Share
 
 As I continue my journey in web development, I am excited to build upon this experience and explore new possibilities with <a  href="https://react.dev/"  target="_blank">**Reactjs**</a> . The Insta Share App serves as a strong foundation for future projects, and I am eager to apply my skills to create even more innovative and impactful applications.
 
-
 # Functionalities of Insta-Share
 
-*****I have successfully implemented all the required functionalities in the Insta Share App:*****
+**\***I have successfully implemented all the required functionalities in the Insta Share App:**\***
 
 **Login Route:**
 
@@ -77,9 +142,8 @@ As I continue my journey in web development, I am excited to build upon this exp
 
 **Not Found Route:**
 
--   If a user enters a random path in the URL, the page will be redirected to the Not Found Route.
--   The Not Found Route will display a suitable message indicating that the requested page or route does not exist.
-
+- If a user enters a random path in the URL, the page will be redirected to the Not Found Route.
+- The Not Found Route will display a suitable message indicating that the requested page or route does not exist.
 
 #### Design Files
 
@@ -101,8 +165,6 @@ As I continue my journey in web development, I am excited to build upon this exp
 - Start up the app using `npm start`
 
 </details>
-
-
 
 ### Quick Tips
 
@@ -130,7 +192,6 @@ As I continue my journey in web development, I am excited to build upon this exp
 
 - In this project, the data you have sent through `POST-APIs` are not saved in the `Database`. If you refresh the page, the changes will not be persisted
 - Whenever you do a `POST-API` call, we are sending a mock object as a response
-
 
 ### Resources
 
@@ -410,75 +471,6 @@ Returns a response containing the list of search posts.
 
 </details>
 
-### User Credentials
-
-<details>
-<summary>Click to view user credentials</summary>
-
-<br/>
-
-**You can use any one of the following credentials**
-
-```text
-  username: aakash
-  password: sky@007
-```
-
-```text
-  username: agastya
-  password: myth#789
-```
-
-```text
-  username: advika
-  password: world@5
-```
-
-```text
-  username: binita
-  password: modest*6
-```
-
-```text
-  username: chetan
-  password: vigor$life
-```
-
-```text
-  username: deepak
-  password: lightstar@1
-```
-
-```text
-  username: harshad
-  password: joy@85
-```
-
-```text
-  username: kapil
-  password: moon$008
-```
-
-```text
- username: rahul
- password: rahul@2021
-```
-
-```text
-  username: shravya
-  password: musical#stone
-```
-
-```text
-  username: saira
-  password: princess@9
-```
-
-<br/>
-</details>
-
-
-***Website***:[https://durgainstashare.ccbp.tech](https://durgainstashare.ccbp.tech/)🔗
-
+**_Website_**:[https://durgainstashare.ccbp.tech](https://durgainstashare.ccbp.tech/)🔗
 
 # Thank You All🙂
